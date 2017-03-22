@@ -8,7 +8,7 @@
  */
 class GatewayRequestMessage extends GatewayMessage
 {
-    private static $db = array(
+    static $db = array(
         'SuccessURL' => 'Text',
         'FailureURL' => 'Text'
     );

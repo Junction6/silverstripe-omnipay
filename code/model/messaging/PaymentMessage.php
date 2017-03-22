@@ -7,18 +7,18 @@
  */
 class PaymentMessage extends DataObject
 {
-    private static $db = array(
+    static $db = array(
         //Created
         "Message" => "Varchar(255)",
         "ClientIp" => "Varchar(39)"
     );
 
-    private static $has_one = array(
+    static $has_one = array(
         "Payment" => "Payment",
         "User" => "Member" //currently logged in user, if appliciable
     );
 
-    private static $summary_fields = array(
+    static $summary_fields = array(
         'i18n_singular_name' => "Type",
         'Message' => "Message",
         'User.Name' => "User"

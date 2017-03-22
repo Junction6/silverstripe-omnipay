@@ -13,7 +13,7 @@ use SilverStripe\Omnipay\PaymentMath;
  */
 final class OmniPayment extends Payment implements PermissionProvider
 {
-    private static $db = array(
+    static $db = array(
         // this is the omnipay 'short name'
         'Gateway' => 'Varchar(128)',
         //contains Amount and Currency
@@ -30,35 +30,35 @@ final class OmniPayment extends Payment implements PermissionProvider
         'FailureUrl' => 'Text'
     );
 
-    private static $has_one = array(
+    static $has_one = array(
         // partial payments will reference the initial payments with this relation
         'InitialPayment' => 'OmniPayment'
     );
 
-    private static $has_many = array(
+    static $has_many = array(
         'Messages' => 'PaymentMessage'
     );
 
-    private static $defaults = array(
+    static $defaults = array(
         'Status' => 'Created'
     );
 
-    private static $casting = array(
+    static $casting = array(
         'Amount' => 'Decimal'
     );
 
-    private static $summary_fields = array(
+    static $summary_fields = array(
         'Money' => 'Money',
         'GatewayTitle' => 'Gateway',
         'PaymentStatus' => 'Status',
         'Created.Nice' => 'Created'
     );
 
-    private static $indexes = array(
+    static $indexes = array(
         'Identifier' => true,
     );
 
-    private static $default_sort = '"Created" DESC, "ID" DESC';
+    static $default_sort = '"Created" DESC, "ID" DESC';
 
     public function getCMSFields()
     {
@@ -484,7 +484,7 @@ final class OmniPayment extends Payment implements PermissionProvider
         }
     }
 
-    protected function onBeforeWrite()
+    function onBeforeWrite()
     {
         parent::onBeforeWrite();
         if (!$this->Identifier) {
