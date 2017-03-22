@@ -14,7 +14,7 @@ class PaymentMessage extends DataObject
     );
 
     static $has_one = array(
-        "Payment" => "Payment",
+        "OmniPayment" => "OmniPayment",
         "User" => "Member" //currently logged in user, if appliciable
     );
 

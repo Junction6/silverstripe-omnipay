@@ -15,7 +15,7 @@ use SilverStripe\Omnipay\Service\ServiceFactory;
 class PaymentGatewayController extends \Controller
 {
 
-    private static $allowed_actions = array(
+     static $allowed_actions = array(
         'endpoint'
     );
 

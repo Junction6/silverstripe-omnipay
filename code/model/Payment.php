@@ -11,12 +11,17 @@ use SilverStripe\Omnipay\PaymentMath;
  *
  * @package payment
  */
-final class OmniPayment extends Payment implements PermissionProvider
+final class OmniPayment extends DataObject implements PermissionProvider
 {
     public static function config(){
 	    $bob = new ViewableData();
 	    $bob->allowed_gateways = 'pin';
+	    $bob->description = 'erse';
 	    return $bob;
+    }
+    
+    public static function create(){
+	    return Object::create('OmniPayment'); 
     }
 	
     static $db = array(
@@ -505,10 +510,10 @@ final class OmniPayment extends Payment implements PermissionProvider
      */
     public function generateUniquePaymentIdentifier()
     {
-        $generator = Injector::inst()->create('RandomGenerator');
+//        $generator = Injector::inst()->create('RandomGenerator');
         $id = null;
         do {
-            $id = substr($generator->randomToken(), 0, 30);
+            $id = rand(1000000, 5000000);
         } while (!$id && self::get()->filter('Identifier', $id)->exists());
 
         return $id;

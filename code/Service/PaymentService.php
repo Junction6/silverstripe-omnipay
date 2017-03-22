@@ -442,7 +442,7 @@ abstract class PaymentService extends \Object
      */
     protected function logToFile($data, $type = "")
     {
-        if ($logstyle = \Payment::config()->file_logging) {
+        if ($logstyle = \OmniPayment::config()->file_logging) {
             $title = $type . " (" . $this->payment->Gateway . ")";
             if ($logstyle === "verbose") {
                 \Debug::log(
@@ -465,7 +465,7 @@ abstract class PaymentService extends \Object
     public function getGatewayFactory()
     {
         if (!isset($this->gatewayFactory)) {
-            $this->gatewayFactory = \Injector::inst()->get('Omnipay\Common\GatewayFactory');
+	    $this->gatewayFactory = new GatewayFactory();
         }
 
         return $this->gatewayFactory;
