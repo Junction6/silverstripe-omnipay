@@ -11,7 +11,7 @@ use SilverStripe\Omnipay\PaymentMath;
  *
  * @package payment
  */
-final class Payment extends DataObject implements PermissionProvider
+final class OmniPayment extends Payment implements PermissionProvider
 {
     private static $db = array(
         // this is the omnipay 'short name'
@@ -32,7 +32,7 @@ final class Payment extends DataObject implements PermissionProvider
 
     private static $has_one = array(
         // partial payments will reference the initial payments with this relation
-        'InitialPayment' => 'Payment'
+        'InitialPayment' => 'OmniPayment'
     );
 
     private static $has_many = array(
