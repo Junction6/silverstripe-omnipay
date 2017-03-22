@@ -82,7 +82,7 @@ class GatewayInfo
      */
     public static function getSupportedGateways($nice = true)
     {
-        $allowed = \Payment::config()->allowed_gateways;
+        $allowed = \OmniPayment::config()->allowed_gateways;
         if (!is_array($allowed) || empty($allowed)) {
             throw new InvalidConfigurationException(
                 'No allowed gateways configured. Use Payment.allowed_gateways config.'

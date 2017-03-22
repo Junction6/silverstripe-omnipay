@@ -13,6 +13,12 @@ use SilverStripe\Omnipay\PaymentMath;
  */
 final class OmniPayment extends Payment implements PermissionProvider
 {
+    public static function config(){
+	    $bob = new ViewableData();
+	    $bob->allowed_gateways = 'pin';
+	    return $bob;
+    }
+	
     static $db = array(
         // this is the omnipay 'short name'
         'Gateway' => 'Varchar(128)',
