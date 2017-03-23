@@ -16,13 +16,31 @@ class GateWayInfoConfig extends Object {
 		parent::__construct();
 		$this->config['Pin']= array(
 		    'parameters' => array(
-			'description' => 'Bob'
+			'testMode' => true,
+			'secretKey' => 'acuITdqTdhe_Z_Jo4t-1hg',
+			'description'=> 'who knows',
+			
 		    ),
 		    'required_fields' => array(
-			'yerMaw'
-			)
-			
+			'billingAddress1',
+			'city',
+			'country',
+			'email',
+			),
+		    'is_offsite'=>true
 		);
+	}
+}
+
+class GatewayFieldsFactoryConfig extends Object {
+	protected $config;	
+	public function get($val){
+		return $this->config[$val];
+	}
+	
+	public function __construct() {
+		parent::__construct();
+		$this->config = array();
 	}
 }
 

@@ -15,8 +15,8 @@ final class OmniPayment extends DataObject implements PermissionProvider
 {
     public static function config(){
 	    $bob = new ViewableData();
-	    $bob->allowed_gateways = 'pin';
-	    $bob->description = 'erse';
+	    $bob->allowed_gateways = array('bob');
+//	    $bob->description = 'erse';
 	    return $bob;
     }
     
@@ -276,8 +276,7 @@ final class OmniPayment extends DataObject implements PermissionProvider
         if (!$this->isInDB()) {
             return null;
         }
-        return $this->Messages()
-            ->filter('ClassName', $type)
+	return $this->Messages("ClassName='{$type}'")
             ->first();
     }
 

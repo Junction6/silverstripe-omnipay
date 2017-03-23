@@ -1,6 +1,6 @@
 <?php
 
-namespace SilverStripe\Omnipay\Admin;
+//namespace SilverStripe\Omnipay\Admin;
 
 use SilverStripe\Omnipay\GatewayInfo;
 
@@ -9,8 +9,11 @@ use SilverStripe\Omnipay\GatewayInfo;
  *
  * @package payment
  */
-class PaymentDevelopmentAdmin extends \Controller
+class PaymentDevelopmentAdmin extends Controller
 {
+	static $allowed_actions = array(
+		'index',
+	    );
 
     public function index()
     {
@@ -77,7 +80,7 @@ class PaymentDevelopmentAdmin extends \Controller
             $factory->find(),
             array_keys(GatewayInfo::getSupportedGateways(false))
         ));
-
+	
         $supportedGateways = array();
 
         array_walk($gateways, function ($name, $index) use (&$supportedGateways, &$factory) {

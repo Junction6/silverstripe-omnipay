@@ -396,6 +396,9 @@ class Config {
 			case 'SilverStripe\Omnipay\PaymentMath':
 				$target = new \PaymentMathConfig();
 				break;
+			case 'SilverStripe\Omnipay\GatewayFieldsFactory':
+				$target = new \GatewayFieldsFactoryConfig();
+				break;
 			case 'ServiceFactory':
 				$target = new ServiceFactoryConfig();
 				break;
