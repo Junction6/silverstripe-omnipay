@@ -27,7 +27,6 @@ class GateWayInfoConfig extends Object {
 			'country',
 			'email',
 			),
-		    'is_offsite'=>true
 		);
 	}
 }

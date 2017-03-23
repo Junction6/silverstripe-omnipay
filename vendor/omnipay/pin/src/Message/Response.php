@@ -83,7 +83,28 @@ class Response extends AbstractResponse
                 return true;
             }
         } else {
-            return $this->data['error_description'];
+		//some error descriptions come back like 
+		//"Fields missing"
+		//which is not enough to determine what is missing, the real details
+		//are buried a bit further down
+		if($messages = $this->data['messages']){
+			$suffix = '';
+			if(is_array($messages)){
+				foreach ($messages as $value){
+					if(is_array($value)){
+						foreach($value as $key2=>$value2){
+							if($key2 == 'message'){
+								$suffix .= $value2;
+							}
+						}
+					} else {
+						//just in case
+						$suffix .= $value . ' ';
+					}
+				}
+			}
+		}
+            return $this->data['error_description']. ($suffix ? ': ' . $suffix :'');
         }
     }
 
