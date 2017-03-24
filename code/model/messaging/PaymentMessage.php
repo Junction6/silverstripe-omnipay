@@ -19,10 +19,14 @@ class PaymentMessage extends DataObject
     );
 
     static $summary_fields = array(
-        'i18n_singular_name' => "Type",
+        'Title' => "Type",
         'Message' => "Message",
-        'User.Name' => "User"
+        'User.Title' => "User"
     );
+    
+    public static $default_sort = 'Created DESC';
+    public static $indexes = array('Created' => true);
+    
 
     public function getCMSFields()
     {
