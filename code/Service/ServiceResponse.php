@@ -87,7 +87,7 @@ class ServiceResponse
     }
 
     /**
-     * @return \Payment
+     * @return \OmniPayment
      */
     public function getPayment()
     {
