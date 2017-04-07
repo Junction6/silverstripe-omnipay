@@ -1,6 +1,6 @@
 <?php
 
-class GatewayMessage extends PaymentMessage
+class GatewayMessage extends OmniPaymentMessage
 {
 
     static $db = array(

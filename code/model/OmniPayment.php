@@ -47,7 +47,7 @@ final class OmniPayment extends DataObject implements PermissionProvider
     );
 
     static $has_many = array(
-        'Messages' => 'PaymentMessage'
+        'Messages' => 'OmniPaymentMessage'
     );
 
     static $defaults = array(

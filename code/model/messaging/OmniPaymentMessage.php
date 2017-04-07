@@ -5,7 +5,7 @@
  *
  * @package payment
  */
-class PaymentMessage extends DataObject
+class OmniPaymentMessage extends DataObject
 {
     static $db = array(
         //Created

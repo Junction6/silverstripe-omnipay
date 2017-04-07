@@ -65,7 +65,7 @@ de:
     StartYearDefaultText: 'Bitte wählen…'
     ExpiryMonthDefaultText: 'Bitte wählen…'
     ExpiryYearDefaultText: 'Bitte wählen…'
-  PaymentMessage:
+  OmniPaymentMessage:
     PLURALNAME: 'Zahlungsnachrichten'
     SINGULARNAME: 'Zahlungsnachricht'
     db_ClientIp: 'Benutzer IP-Adresse'

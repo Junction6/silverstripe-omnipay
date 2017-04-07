@@ -375,9 +375,9 @@ abstract class PaymentService extends \Object
     /**
      * Record a transaction on this for this payment.
      * @param string $type the type of transaction to create.
-     *        This is any class that is (or extends) PaymentMessage.
+     *        This is any class that is (or extends) OmniPaymentMessage.
      * @param array|string|AbstractResponse|AbstractRequest|OmnipayException|NotificationInterface $data the response to record, or data to store
-     * @return \PaymentMessage newly created DataObject, saved to database.
+     * @return \OmniPaymentMessage newly created DataObject, saved to database.
      */
     protected function createMessage($type, $data = null)
     {
