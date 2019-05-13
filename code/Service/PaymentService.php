@@ -41,7 +41,7 @@ abstract class PaymentService extends \Object
     private static $httpRequest;
 
     /**
-     * @var \Payment
+     * @var \OmniPayment
      */
     protected $payment;
 
@@ -56,9 +56,9 @@ abstract class PaymentService extends \Object
     protected $gatewayFactory;
 
     /**
-     * @param \Payment
+     * @param \OmniPayment
      */
-    public function __construct(\Payment $payment)
+    public function __construct(\OmniPayment $payment)
     {
         parent::__construct();
         $this->payment = $payment;

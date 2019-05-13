@@ -28,12 +28,12 @@ class ServiceFactory extends \Object
      *
      * If the method didn't return an instance, this will fall back to the services configuration.
      *
-     * @param \Payment $payment the payment instance
+     * @param \OmniPayment $payment the payment instance
      * @param string $intent the intent of the service.
      * @return PaymentService
      * @throws InvalidConfigurationException when creation of the service failed due to misconfiguration
      */
-    public function getService(\Payment $payment, $intent)
+    public function getService(\OmniPayment $payment, $intent)
     {
         $method = 'create' . ucfirst($intent) . 'Service';
 
@@ -65,11 +65,11 @@ class ServiceFactory extends \Object
     /**
      * Create a payment service. This will either return an AuthorizeService or PurchaseService, depending on
      * the gateway config.
-     * @param \Payment $payment
+     * @param \OmniPayment $payment
      * @return AuthorizeService|PurchaseService
      * @throws InvalidConfigurationException
      */
-    protected function createPaymentService(\Payment $payment)
+    protected function createPaymentService(\OmniPayment $payment)
     {
         return $this->getService(
             $payment,
