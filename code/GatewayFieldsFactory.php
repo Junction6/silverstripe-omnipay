@@ -138,7 +138,7 @@ class GatewayFieldsFactory
             'number' => \TextField::create(
                 $this->getFieldName('number'),
                 _t('PaymentForm.Number', 'Card Number')
-            )->setDescription(_t('PaymentForm.NumberDescription', 'no dashes or spaces')),
+            )->setHelp(_t('PaymentForm.NumberDescription', 'no dashes or spaces')),
             'startMonth' => \DropdownField::create(
                 $this->getFieldName('startMonth'),
                 _t('PaymentForm.StartMonth', 'Month'),
@@ -170,7 +170,7 @@ class GatewayFieldsFactory
                 _t('PaymentForm.IssueNumber', 'Issue Number')
             )
         );
-
+	
         $this->cullForGateway($fields);
         //optionally group date fields
         if ($this->groupdatefields) {
@@ -331,7 +331,7 @@ class GatewayFieldsFactory
         if (!$this->gateway){
             return;
         }
-
+	
         $selected = array_merge($defaults, GatewayInfo::requiredFields($this->gateway));
         foreach ($fields as $name => $field) {
             if (!in_array($name, $selected)) {

@@ -82,7 +82,7 @@ class GatewayInfo
      */
     public static function getSupportedGateways($nice = true)
     {
-        $allowed = \Payment::config()->allowed_gateways;
+        $allowed = \OmniPayment::config()->allowed_gateways;
         if (!is_array($allowed) || empty($allowed)) {
             throw new InvalidConfigurationException(
                 'No allowed gateways configured. Use Payment.allowed_gateways config.'
@@ -177,7 +177,7 @@ class GatewayInfo
             return true;
         }
 
-        $manualGateways = \Payment::config()->manual_gateways;
+        $manualGateways = \OmniPayment::config()->manual_gateways;
         if (is_array($manualGateways)) {
             \Deprecation::notice(
                 '3.0',
@@ -403,7 +403,7 @@ class GatewayInfo
      */
     public static function getTokenKey($gateway, $default = 'token')
     {
-        $tokenKey = \Payment::config()->token_key;
+        $tokenKey = \OmniPayment::config()->token_key;
         if ($tokenKey) {
             \Deprecation::notice(
                 '3.0',
@@ -459,7 +459,7 @@ class GatewayInfo
      */
     public static function getParameters($gateway)
     {
-        $params = \Payment::config()->parameters;
+        $params = \OmniPayment::config()->parameters;
         if (isset($params[$gateway])) {
             \Deprecation::notice(
                 '3.0',

@@ -375,9 +375,9 @@ abstract class PaymentService extends \Object
     /**
      * Record a transaction on this for this payment.
      * @param string $type the type of transaction to create.
-     *        This is any class that is (or extends) PaymentMessage.
+     *        This is any class that is (or extends) OmniPaymentMessage.
      * @param array|string|AbstractResponse|AbstractRequest|OmnipayException|NotificationInterface $data the response to record, or data to store
-     * @return \PaymentMessage newly created DataObject, saved to database.
+     * @return \OmniPaymentMessage newly created DataObject, saved to database.
      */
     protected function createMessage($type, $data = null)
     {
@@ -442,7 +442,7 @@ abstract class PaymentService extends \Object
      */
     protected function logToFile($data, $type = "")
     {
-        if ($logstyle = \Payment::config()->file_logging) {
+        if ($logstyle = \OmniPayment::config()->file_logging) {
             $title = $type . " (" . $this->payment->Gateway . ")";
             if ($logstyle === "verbose") {
                 \Debug::log(
@@ -465,7 +465,7 @@ abstract class PaymentService extends \Object
     public function getGatewayFactory()
     {
         if (!isset($this->gatewayFactory)) {
-            $this->gatewayFactory = \Injector::inst()->get('Omnipay\Common\GatewayFactory');
+	    $this->gatewayFactory = new GatewayFactory();
         }
 
         return $this->gatewayFactory;

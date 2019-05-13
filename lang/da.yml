@@ -61,7 +61,7 @@ da:
     StartMonth: Måned
     StartYear: År
     Type: Type
-  PaymentMessage:
+  OmniPaymentMessage:
     PLURALNAME: 'Betalingsbeskeder'
     SINGULARNAME: 'Betalingsbesked'
     db_ClientIp: 'Kunde IP'

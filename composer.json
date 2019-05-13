@@ -10,12 +10,13 @@
 	"require-dev": {
 		"guzzle/guzzle": "^3.9",
 		"omnipay/paypal": "~2.5",
+                "omnipay/pin": "~2.2",
 		"omnipay/dummy": "~2.1",
 		"omnipay/paymentexpress": "~2.1",
-        "omnipay/tests": "^2.0",
-        "omnipay/pin": "~2.0",
-        "omnipay/stripe": "~2.0"
-    },
+        	"omnipay/tests": "^2.0",
+        	"omnipay/pin": "~2.0",
+        	"omnipay/stripe": "~2.0"
+    	},
 	"extra": {
 		"installer-name": "omnipay"
 	},
