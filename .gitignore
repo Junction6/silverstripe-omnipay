@@ -1,1 +1,2 @@
-/vendor/
+# taking this out because it looks like J6 is using branch dev-master which has all vendor files committed so will follow suit
+# /vendor/
