@@ -10,9 +10,9 @@ return array(
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+    'Omnipay\\Stripe\\' => array($vendorDir . '/omnipay/stripe/src'),
     'Omnipay\\Pin\\' => array($vendorDir . '/omnipay/pin/src'),
     'Omnipay\\PaymentExpress\\' => array($vendorDir . '/omnipay/paymentexpress/src'),
     'Omnipay\\PayPal\\' => array($vendorDir . '/omnipay/paypal/src'),
     'Omnipay\\Dummy\\' => array($vendorDir . '/omnipay/dummy/src'),
-    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
 );
