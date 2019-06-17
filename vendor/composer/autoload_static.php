@@ -21,6 +21,7 @@ class ComposerStaticInit07678b429b682712a430ebed135aa5f0
         ),
         'O' => 
         array (
+            'Omnipay\\Stripe\\' => 15,
             'Omnipay\\Pin\\' => 12,
             'Omnipay\\PaymentExpress\\' => 23,
             'Omnipay\\PayPal\\' => 15,
@@ -44,6 +45,10 @@ class ComposerStaticInit07678b429b682712a430ebed135aa5f0
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
+        ),
+        'Omnipay\\Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/omnipay/stripe/src',
         ),
         'Omnipay\\Pin\\' => 
         array (

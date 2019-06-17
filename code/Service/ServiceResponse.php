@@ -58,7 +58,7 @@ class ServiceResponse
     protected $isAwaitingNotification = false;
 
     /**
-     * @var \Payment
+     * @var \OmniPayment
      */
     protected $payment;
 
@@ -76,9 +76,9 @@ class ServiceResponse
     /**
      * ServiceResponse constructor.
      * Additional arguments will be treated as state flags
-     * @param \Payment $payment the payment instance
+     * @param \OmniPayment $payment the payment instance
      */
-    public function __construct(\Payment $payment)
+    public function __construct(\OmniPayment $payment)
     {
         $this->payment = $payment;
         for ($i = 1, $len = func_num_args(); $i < $len; $i++) {
