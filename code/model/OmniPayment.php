@@ -71,7 +71,7 @@ final class OmniPayment extends DataObject implements PermissionProvider
 
     static $default_sort = '"Created" DESC, "ID" DESC';
 
-    public function getCMSFields()
+    public function getCMSFields($params = null)
     {
         $fields = new FieldList(
             TextField::create('MoneyValue', _t('Payment.db_Money', 'Money'), $this->dbObject('Money')->Nice()),
@@ -291,9 +291,7 @@ final class OmniPayment extends DataObject implements PermissionProvider
             return null;
         }
 
-        return Payment::get()
-            ->filter('InitialPaymentID', $this->ID)
-            ->sort(array('Created' => 'DESC', 'ID' => 'DESC'));
+        return DataObject::get('Payment', "InitialPaymentID = '$this->ID'", 'Created DESC, ID DESC');
     }
 
     /**
