@@ -21,7 +21,7 @@ final class OmniPayment extends DataObject implements PermissionProvider
     }
     
     public static function create(){
-	    return parent::create('OmniPayment'); 
+	    return new OmniPayment();
     }
 	
     static $db = array(
