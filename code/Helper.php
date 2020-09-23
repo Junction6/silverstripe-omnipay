@@ -37,7 +37,7 @@ class Helper
         &$a6=null,
         &$a7=null
     ) {
-        if (!($object instanceof \Object)) {
+        if (!($object instanceof SS_Object)) {
             return array();
         }
 
