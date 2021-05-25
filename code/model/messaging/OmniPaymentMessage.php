@@ -28,7 +28,7 @@ class OmniPaymentMessage extends DataObject
     public static $indexes = array('Created' => true);
     
 
-    public function getCMSFields()
+    public function getCMSFields($params = null)
     {
         return parent::getCMSFields()->makeReadOnly();
     }
